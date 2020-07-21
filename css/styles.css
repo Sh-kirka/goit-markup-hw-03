@@ -7,7 +7,15 @@
   --primary-white-color: #ffffff;
   --secondary-white-color: #f5f4fa;
 }
+html {
+  box-sizing: border-box;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 body {
   background-color: #ffffff;
   font-family: var(--primary-font);
@@ -33,7 +41,9 @@ img {
   margin: 0;
   padding: 0;
 }
-
+p {
+  margin: 0;
+}
 .link:hover,
 .link:focus {
   color: var(--accent-color);
@@ -115,6 +125,9 @@ img {
 /*HERO СЕКЦИЯ*/
 .hero {
   text-align: center;
+  background-color:#F5F4FA; 
+  margin-bottom: 94px;
+      padding-bottom: 200px;
 }
 .hero-title {
   font-weight: 900;
@@ -123,28 +136,64 @@ img {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--primary-white-color);
-  background-color: rgba(160, 161, 163, 0.8);
   margin-bottom: 30px;
   padding-top: 200px;
+
 }
 
 .modal-button {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    display: block;
+    padding-top: 10px;
+    padding-right: 32px;
+    padding-bottom: 10px;
+    padding-left: 32px;
+    margin-right: auto;
+    margin-left: auto;
+    border-width: 0px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    text-align: center;
+    letter-spacing: 0.06em;
+    cursor: pointer;
 }
 /*О НАС*/
 .about-us-list {
   display: flex;
+  margin: 0;
 }
 .about-us-list .title {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
   color: var(--secondary-text-color);
-  margin-bottom: 30px;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  margin: 0;
 }
-.about-us-list:not(:last-child) {
+.about-us-list-item:not(:last-child) {
   margin-right: 30px;
+}
+.about-us-list-item {
+  display: block;
+}
+.about-us-list-back {
+width: 270px;
+height: 120px;
+left: 515px;
+top: 774px;
+background: #F5F4FA;
+border-radius: 4px;
+}
+.about-us-list-text {
+  font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
 }
 /*Чем мы занимаемся*/
 .section-title {
@@ -153,28 +202,36 @@ img {
   text-align: center;
   color: var(--secondary-text-color);
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 0px;
 }
 .whatawedoing-title {
+  display: flex;
   font-weight: 700;
   line-height: 1.14;
   text-align: center;
+  justify-content: center;
   text-transform: uppercase;
   color: var(--primary-white-color);
   width: 370px;
   height: 70px;
   left: 215px;
   top: 1435px;
-  background: rgba(47, 48, 58, 0.8);
   margin: 0;
+  background: rgba(47, 48, 58, 0.8);
+  padding-top: 27px;
 }
+
 .whatawedoing {
   display: flex;
+  padding-top: 50px;
+
 }
 .whatawedoing-item:not(:last-child) {
   margin-right: 30px;
 }
 
+
+}
 /* Наша команда  */
 .grey-section {
   background: #f5f4fa;
@@ -189,6 +246,9 @@ img {
 .grey-section .container {
   padding-top: 94px;
 }
+.grey-section {
+  background-color: #f5f4fa;
+}
 .text {
   font-size: 16px;
   line-height: 1.19;
@@ -198,9 +258,17 @@ img {
 }
 .team-list {
   display: flex;
+  padding-top: 50px;
 }
 .team-list-item:not(:last-child) {
   margin-right: 30px;
+}
+.team-list-item {
+  background-color: var(--primary-white-color);
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+      padding-bottom: 24px;
 }
 .name-title {
   margin-top: 30px;
@@ -230,6 +298,9 @@ img {
   justify-content: center;
   align-items: center;
 }
+.cliernt-list {
+  padding-top: 50px;
+}
 /* Футер */
 .footer .container {
   display: flex;
@@ -254,7 +325,7 @@ img {
 }
 .footer-logo-address {
   padding-bottom: 60px;
-  margin-left: 214px;
+  margin-left: 0px;
 }
 .footer-address-item,
 .footer-mail {
@@ -283,7 +354,7 @@ img {
   display: block;
   margin-left: 147px;
 }
-.social-list {
+.join .social-list {
   margin-top: 20px;
   margin-bottom: 100px;
 }
@@ -297,6 +368,7 @@ img {
 .filter-button {
   color: var(--secondary-text-color);
   background-color: var(--secondary-white-color);
+  border-radius: 4px;
 }
 
 .portfolio-list .link {
@@ -316,30 +388,44 @@ img {
 .portfolio-list .hover-text-portfolio-list {
   font-size: 18px;
   line-height: 1.56;
+  letter-spacing: 0.03em;
   color: var(--primary-white-color);
+  background-color: var(--accent-color);
 }
-
-.portfolio-container {
-  width: 1230px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
+.portfolio-list-item:hover,
+.portfolio-list-item:focus {
+box-sizing: border-box;
+box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 .portfolio-list-item {
   width: calc((100% - 2 * 30px) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
+  border: 1px solid #EEEEEE;
+}
+
+.portfolio-container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 93px;
+  margin-bottom: 94px;
+}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .portfolio-list-description {
   display: block;
   justify-content: flex-start;
   align-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .portfolio-list-description .title {
   margin-bottom: 0;
@@ -359,19 +445,37 @@ img {
 .filter-list {
   display: flex;
   justify-content: center;
+    margin-bottom: 50px;
 }
 .filter-button {
   margin-right: 8px;
   border: 0;
-  margin-bottom: 50px;
   text-align: center;
   padding-right: 22px;
   padding-left: 22px;
   padding-bottom: 6px;
   padding-top: 6px;
+  border-radius: 4px;
+  display: block;
+
+ border-width: 0px;
+ border-radius: 4px;
+ font-weight: 500;
+ font-size: 16px;
+ line-height: 1.63;
+ cursor: pointer;
+}
+
+.filter-button:hover,
+.filter-button:focus {
+box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 3px 1px rgba(0, 0, 0, 0.1);
 }
 .hover-text-portfolio-list {
   margin: 0;
+}
+
+/*.portfolio-list-img {
+  display: block;
 }
 /*.hover-text-portfolio-list:hover {
   width: 370px;
